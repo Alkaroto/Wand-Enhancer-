@@ -74,7 +74,7 @@ $visualStudio = Resolve-VisualStudioPath
 $msbuild = Resolve-MSBuildPath $visualStudio
 $targetFrameworkRoot = Resolve-TargetFrameworkRoot
 
-$buildArgs = @('/m', "/p:Configuration=$Configuration", '/p:Platform=Any CPU')
+$buildArgs = @('/m', '/clp:ErrorsOnly', "/p:Configuration=$Configuration", '/p:Platform=Any CPU')
 if ($targetFrameworkRoot) {
     $buildArgs += "/p:TargetFrameworkRootPath=$targetFrameworkRoot"
 }
